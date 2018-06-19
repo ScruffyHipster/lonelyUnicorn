@@ -12,6 +12,7 @@
 		4A40F05E20D83FFB00EBF4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A40F05C20D83FFB00EBF4CC /* Main.storyboard */; };
 		4A40F06020D83FFD00EBF4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A40F05F20D83FFD00EBF4CC /* Assets.xcassets */; };
 		4A40F06320D83FFD00EBF4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A40F06120D83FFD00EBF4CC /* LaunchScreen.storyboard */; };
+		4A40F06D20D9475A00EBF4CC /* CGFloatRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40F06C20D9475A00EBF4CC /* CGFloatRandom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4A40F05F20D83FFD00EBF4CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A40F06220D83FFD00EBF4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A40F06420D83FFD00EBF4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A40F06C20D9475A00EBF4CC /* CGFloatRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatRandom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,10 @@
 		4A40F05720D83FFB00EBF4CC /* lonelyUnicorn */ = {
 			isa = PBXGroup;
 			children = (
+				4A40F06F20D94E6A00EBF4CC /* View */,
 				4A40F06B20D8401900EBF4CC /* Controllers */,
 				4A40F06A20D8400B00EBF4CC /* AppDelegate */,
-				4A40F05C20D83FFB00EBF4CC /* Main.storyboard */,
+				4A40F06E20D94E5600EBF4CC /* Model */,
 				4A40F05F20D83FFD00EBF4CC /* Assets.xcassets */,
 				4A40F06120D83FFD00EBF4CC /* LaunchScreen.storyboard */,
 				4A40F06420D83FFD00EBF4CC /* Info.plist */,
@@ -78,6 +81,22 @@
 				4A40F05A20D83FFB00EBF4CC /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4A40F06E20D94E5600EBF4CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A40F06C20D9475A00EBF4CC /* CGFloatRandom.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A40F06F20D94E6A00EBF4CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A40F05C20D83FFB00EBF4CC /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A40F05B20D83FFB00EBF4CC /* ViewController.swift in Sources */,
+				4A40F06D20D9475A00EBF4CC /* CGFloatRandom.swift in Sources */,
 				4A40F05920D83FFB00EBF4CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
