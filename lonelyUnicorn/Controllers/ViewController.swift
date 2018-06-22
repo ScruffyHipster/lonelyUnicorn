@@ -72,7 +72,7 @@ class ViewController: UIViewController {
 	
 	func startNewGame() {
 		startGameButton.isHidden = true
-		scoreLabel.isHidden = true
+		scoreLabel.isHidden = false
 		gamePoints = 0
 		updatePointsLabel(gamePoints)
 		state = State.inPlay
@@ -86,7 +86,6 @@ class ViewController: UIViewController {
 			if self.state == State.inPlay {
 				if self.currentButton == self.alienButton {
 					print("game over")
-					//self.gameOver
 				} else {
 					self.oneGameRound()
 				}
@@ -95,36 +94,38 @@ class ViewController: UIViewController {
 	}
 	
 	func displayRandomButton() {
+		
 		randomIndex = Int(arc4random_uniform(UInt32(buttons.count)))
 		
+		let viewWidth = view.bounds.width
+		let viewHeight = view.bounds.height
+		
+		let buttonWidth = currentButton.bounds.width
+		let buttonHeight = currentButton.bounds.height
+		
+		let xWidth = viewWidth - buttonWidth
+		let yHeight = viewHeight - buttonHeight
+		
+		let xOffset = CGFloat(arc4random_uniform(UInt32(xWidth)))
+		let yOffset = CGFloat(arc4random_uniform(UInt32(yHeight)))
+		
 		if randomIndex == alienButton.tag {
+			currentButton = alienButton
 			alienButton.isHidden = false
 			robotButton.isHidden = true
 		}
 		else if randomIndex == robotButton.tag {
+			currentButton = robotButton
 			alienButton.isHidden = true
 			robotButton.isHidden = false
 		}
+		currentButton.center.x = xOffset + buttonWidth / 2
+		currentButton.center.y = yOffset + buttonHeight / 2
 	}
 	
 	func updatePointsLabel(_ newValue: Int) {
 		scoreLabel.text = "\(newValue)"
 	}
-	
-	func randCGFloat(_ min: CGFloat, _ max: CGFloat ) -> CGFloat {
-		return CGFloat.random(min: 2.0, max:4.0)
-	}
 
-	func randomXcoordinate() -> CGFloat {
-		let left = view.safeAreaInsets.left + currentButton.bounds.width
-		let right = view.safeAreaInsets.right + currentButton.bounds.width
-		return randCGFloat(left, right)
-	}
-	
-	func randomYcoordinate() -> CGFloat {
-		let top = view.safeAreaInsets.top + currentButton.bounds.height
-		let bottom = view.safeAreaInsets.bottom + currentButton.bounds.height
-		return randCGFloat(top, bottom)
-	}
 }
 
